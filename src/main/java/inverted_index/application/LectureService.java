@@ -22,6 +22,10 @@ public class LectureService {
         lectureAppender.saveTestData();
     }
 
+    public List<LectureResponse> findAllByKeywordWithInvertedIndex(final String keyword) {
+        return lectureSearcher.findAllByKeywordWithInvertedIndex(keyword);
+    }
+
     public List<LectureResponse> findAllByKeyword(final String keyword) {
         return lectureSearcher.findAllByKeyword(keyword);
     }

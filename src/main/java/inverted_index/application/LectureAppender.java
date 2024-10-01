@@ -28,7 +28,7 @@ public class LectureAppender {
     public void saveTestData() {
         Random random = new Random();
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1_000_000; i++) {
             int keywordCount = random.nextInt(3) + 1; // 키워드 1개 ~ 3개
             List<String> shuffledKeywords = new ArrayList<>(KeywordConstant.keywords);
             Collections.shuffle(shuffledKeywords);

@@ -25,6 +25,13 @@ public class LectureController {
     }
 
     @GetMapping("/api/lectures/inverted-index")
+    public CollectionResponse<List<LectureResponse>> findAllByKeywordWithInvertedIndex(
+            @RequestParam final String keyword) {
+        List<LectureResponse> lectureResponses = lectureService.findAllByKeywordWithInvertedIndex(keyword);
+        return CollectionResponse.of(lectureResponses);
+    }
+
+    @GetMapping("/api/lectures")
     public CollectionResponse<List<LectureResponse>> findAllByKeyword(@RequestParam final String keyword) {
         List<LectureResponse> lectureResponses = lectureService.findAllByKeyword(keyword);
         return CollectionResponse.of(lectureResponses);
