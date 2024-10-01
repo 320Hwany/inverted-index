@@ -9,7 +9,7 @@ import lombok.Getter;
 public class Lecture {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "article_id")
+    @Column(name = "lecture_id")
     private Long id;
 
     private String title;
@@ -20,8 +20,7 @@ public class Lecture {
     }
 
     @Builder
-
-    public Lecture(final String title, final String teacher) {
+    private Lecture(final String title, final String teacher) {
         this.title = title;
         this.teacher = teacher;
     }

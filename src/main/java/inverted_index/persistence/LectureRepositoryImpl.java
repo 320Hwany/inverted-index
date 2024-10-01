@@ -2,7 +2,6 @@ package inverted_index.persistence;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
 @Repository
 public class LectureRepositoryImpl implements LectureRepository {
@@ -14,7 +13,7 @@ public class LectureRepositoryImpl implements LectureRepository {
     }
 
     @Override
-    public void saveAll(final List<Lecture> lectures) {
-        lectureJpaRepository.saveAll(lectures);
+    public Lecture save(final Lecture lecture) {
+        return lectureJpaRepository.save(lecture);
     }
 }
